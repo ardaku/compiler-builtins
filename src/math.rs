@@ -104,7 +104,10 @@ no_mangle! {
 }
 
 // only for the thumb*-none-eabi* targets
-#[cfg(all(target_arch = "arm", target_os = "none"))]
+#[cfg(any(
+    all(target_arch = "arm", target_os = "none"),
+    all(target_arch = "aarch64", target_os = "novusk"),
+))]
 no_mangle! {
     fn fmin(x: f64, y: f64) -> f64;
     fn fminf(x: f32, y: f32) -> f32;

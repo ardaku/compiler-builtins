@@ -37,15 +37,9 @@ extern crate core;
 #[macro_use]
 mod macros;
 
-pub mod float;
-pub mod int;
+//pub mod float;
+//pub mod int;
 
-#[cfg(any(
-    all(target_family = "wasm", target_os = "unknown"),
-    all(target_arch = "x86_64", target_os = "uefi"),
-    all(target_arch = "arm", target_os = "none"),
-    all(target_vendor = "fortanix", target_env = "sgx")
-))]
 pub mod math;
 pub mod mem;
 

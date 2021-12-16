@@ -1,5 +1,7 @@
 //! Macros shared throughout the compiler-builtins implementation
 
+#![allow(unused_macros)]
+
 /// Changes the visibility to `pub` if feature "public-test-deps" is set
 #[cfg(not(feature = "public-test-deps"))]
 macro_rules! public_test_dep {

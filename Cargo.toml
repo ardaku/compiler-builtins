@@ -1,6 +1,6 @@
 [package]
 authors = ["Jorge Aparicio <japaricious@gmail.com>"]
-name = "compiler_builtins"
+name = "compiler_builtins_patch"
 version = "0.1.66"
 license = "MIT/Apache-2.0"
 readme = "README.md"
