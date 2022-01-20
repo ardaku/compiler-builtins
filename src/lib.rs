@@ -37,10 +37,15 @@ extern crate core;
 #[macro_use]
 mod macros;
 
-//pub mod float;
-//pub mod int;
+
+#[cfg(target_arch = "riscv32")]
+pub mod float;
+#[cfg(target_arch = "riscv32")]
+pub mod int;
 
 pub mod math;
+
+#[cfg(not(target_arch = "riscv32"))]
 pub mod mem;
 
 #[cfg(target_arch = "arm")]

@@ -119,6 +119,8 @@ sdivmod!(
     maybe_use_optimized_c_shim
 );
 // The `#[arm_aeabi_alias = __aeabi_idiv]` attribute cannot be made to work with `intrinsics!` in macros
+
+#[cfg(not(target_arch = "riscv32"))]
 intrinsics! {
     #[maybe_use_optimized_c_shim]
     #[arm_aeabi_alias = __aeabi_idiv]

@@ -98,6 +98,7 @@ fn unord<F: Float>(a: F, b: F) -> bool {
     a_abs > inf_rep || b_abs > inf_rep
 }
 
+#[cfg(not(target_arch = "riscv32"))]
 intrinsics! {
     pub extern "C" fn __lesf2(a: f32, b: f32) -> i32 {
         cmp(a, b).to_le_abi()

@@ -97,6 +97,7 @@ impl_signed_mulo!(i32_overflowing_mul, i32, u32);
 impl_signed_mulo!(i64_overflowing_mul, i64, u64);
 impl_signed_mulo!(i128_overflowing_mul, i128, u128);
 
+#[cfg(not(target_arch = "riscv32"))]
 intrinsics! {
     #[maybe_use_optimized_c_shim]
     #[arm_aeabi_alias = __aeabi_lmul]

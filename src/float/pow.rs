@@ -25,6 +25,7 @@ fn pow<F: Float>(a: F, b: i32) -> F {
     }
 }
 
+#[cfg(not(target_arch = "riscv32"))]
 intrinsics! {
     pub extern "C" fn __powisf2(a: f32, b: i32) -> f32 {
         pow(a, b)

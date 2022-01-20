@@ -188,6 +188,7 @@ where
     F::from_repr(result)
 }
 
+#[cfg(not(target_arch = "riscv32"))]
 intrinsics! {
     #[aapcs_on_arm]
     #[arm_aeabi_alias = __aeabi_fadd]

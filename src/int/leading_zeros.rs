@@ -131,6 +131,7 @@ pub(crate) fn usize_leading_zeros_riscv(x: usize) -> usize {
 }
 }
 
+#[cfg(not(target_arch = "riscv32"))]
 intrinsics! {
     #[maybe_use_optimized_c_shim]
     #[cfg(any(

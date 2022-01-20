@@ -1,7 +1,7 @@
-use float::add::__adddf3;
-use float::add::__addsf3;
-use float::Float;
+#[cfg(not(target_arch = "riscv32"))]
+use float::{add::__adddf3, add::__addsf3, Float};
 
+#[cfg(not(target_arch = "riscv32"))]
 intrinsics! {
     #[arm_aeabi_alias = __aeabi_fsub]
     pub extern "C" fn __subsf3(a: f32, b: f32) -> f32 {

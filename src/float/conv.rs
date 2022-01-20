@@ -74,6 +74,7 @@ where
     F::from_parts(sign, (exp + F::EXPONENT_BIAS).cast(), x.cast())
 }
 
+#[cfg(not(target_arch = "riscv32"))]
 intrinsics! {
     #[arm_aeabi_alias = __aeabi_i2f]
     pub extern "C" fn __floatsisf(i: i32) -> f32 {
@@ -213,6 +214,7 @@ where
     }
 }
 
+#[cfg(not(target_arch = "riscv32"))]
 intrinsics! {
     #[arm_aeabi_alias = __aeabi_f2iz]
     pub extern "C" fn __fixsfsi(f: f32) -> i32 {

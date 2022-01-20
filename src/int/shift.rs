@@ -68,6 +68,7 @@ impl Lshr for u32 {}
 impl Lshr for u64 {}
 impl Lshr for u128 {}
 
+#[cfg(not(target_arch = "riscv32"))]
 intrinsics! {
     #[maybe_use_optimized_c_shim]
     pub extern "C" fn __ashlsi3(a: u32, b: u32) -> u32 {

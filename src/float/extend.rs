@@ -69,6 +69,7 @@ where
     R::from_repr(abs_result | (sign_result.wrapping_shl(dst_bits - src_bits)))
 }
 
+#[cfg(not(target_arch = "riscv32"))]
 intrinsics! {
     #[aapcs_on_arm]
     #[arm_aeabi_alias = __aeabi_f2d]

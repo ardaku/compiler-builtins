@@ -444,6 +444,7 @@ where
     }
 }
 
+#[cfg(not(target_arch = "riscv32"))]
 intrinsics! {
     #[arm_aeabi_alias = __aeabi_fdiv]
     pub extern "C" fn __divsf3(a: f32, b: f32) -> f32 {

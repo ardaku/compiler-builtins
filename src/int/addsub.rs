@@ -61,6 +61,7 @@ where
 impl Subo for i128 {}
 impl Subo for u128 {}
 
+#[cfg(not(target_arch = "riscv32"))]
 intrinsics! {
     pub extern "C" fn __rust_i128_add(a: i128, b: i128) -> i128 {
         AddSub::add(a,b)

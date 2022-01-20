@@ -1,3 +1,4 @@
+#![allow(dead_code)]
 use core::ops;
 
 mod specialized_div_rem;
@@ -5,11 +6,11 @@ mod specialized_div_rem;
 pub mod addsub;
 pub mod leading_zeros;
 pub mod mul;
-pub mod sdiv;
+//pub mod sdiv;
 pub mod shift;
 pub mod udiv;
 
-pub use self::leading_zeros::__clzsi2;
+// pub use self::leading_zeros::__clzsi2;
 
 public_test_dep! {
 /// Trait for some basic operations on integers

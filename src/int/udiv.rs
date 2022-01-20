@@ -1,9 +1,10 @@
-#[cfg(not(feature = "public-test-deps"))]
-pub(crate) use int::specialized_div_rem::*;
+// #[cfg(not(feature = "public-test-deps"))]
+// pub(crate) use int::specialized_div_rem::*;
 
 #[cfg(feature = "public-test-deps")]
 pub use int::specialized_div_rem::*;
 
+#[cfg(not(target_arch = "riscv32"))]
 intrinsics! {
     #[maybe_use_optimized_c_shim]
     #[arm_aeabi_alias = __aeabi_uidiv]

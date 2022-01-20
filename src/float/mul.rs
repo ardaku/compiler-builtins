@@ -184,6 +184,7 @@ where
     F::from_repr(product_high)
 }
 
+#[cfg(not(target_arch = "riscv32"))]
 intrinsics! {
     #[aapcs_on_arm]
     #[arm_aeabi_alias = __aeabi_fmul]
